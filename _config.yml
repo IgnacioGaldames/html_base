@@ -1,4 +1,4 @@
 source: _source
-destination: _dist
+destination: _site
 
 timezone: America/Santiago
