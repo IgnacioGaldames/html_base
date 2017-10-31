@@ -1,0 +1,4 @@
+source: _source
+destination: _dist
+
+timezone: America/Santiago
