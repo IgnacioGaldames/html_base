@@ -1,6 +1,6 @@
 //Main
 
-$base-size: 14
+$base-size: 16
 $font-family: 'Montserrat', sans-serif
 
 /* COLORS */
@@ -8,19 +8,19 @@ $mainColor: black
 $accentColor: #fdb700
 $background-color: white
 
-$red: #E94E67;
-$purple: #65467D;
-$yellow: #FFD429;
-$lilac: #AE82B7;
-$coral: #EB637F;
+$red: #E94E67
+$purple: #65467D
+$yellow: #FFD429
+$lilac: #AE82B7
+$coral: #EB637F
 $grey: #606060
 
-.cardumen
-    //@import 'bootstrap-4.0.0-beta/scss/bootstrap.scss'
+.minisitio
+    @import 'node_modules/bootstrap/scss/bootstrap.scss'
     @import 'mixins'
     @import 'utilidades'
     @import 'youtube'
-    @include margin-reset()
+    //@include margin-reset()
     @import 'font-face'
     @import 'componentesColores'
     @import 'form'
@@ -29,4 +29,4 @@ $grey: #606060
     overflow: hidden
     color: $mainColor
     background-color: $background-color
-    font-size: $base-size
+    @include font-size($base-size)
