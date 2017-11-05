@@ -19,9 +19,18 @@
     font-size: ($size) + px
     font-size: ($size/$base-size) + rem
 
+@mixin min-width($min-width)
+    min-width: ($min-width) + px
+    min-width: ($min-width/$base-size) + rem
+
+
 @mixin min-height($min-height)
     min-height: ($min-height) + px
     min-height: ($min-height/$base-size) + rem
+
+@mixin max-height($max-height)
+    max-height: ($max-height) + px
+    max-height: ($max-height/$base-size) + rem
 
 @mixin height($height)
     height: ($height) + px

@@ -1,0 +1,472 @@
+#hot-price {
+    text-align: center;
+    /* background-color: #000; */
+    line-height: 0px;
+}
+
+#hot-price .slider {
+    /* overflow: hidden; */
+    position: relative;
+}
+
+#hot-price .slider .caja-color {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+}
+
+#hot-price .slider .caja-color:nth-of-type(1) {
+    left: 0;
+    background: #633f7b;
+}
+
+#hot-price .slider .caja-color:nth-of-type(2) {
+    right: 0;
+    background: #633f7b;
+}
+
+#hot-price .owl-pagination {
+    display: block;
+    position: absolute;
+    bottom: -35px;
+    z-index: 1;
+    right: 0;
+    left: 0;
+}
+
+#hot-price #main-slider {
+    position: relative;
+}
+
+#hot-price #main-slider .owl-prev,
+#hot-price #main-slider .owl-next {
+    width: 40px;
+    height: 71px;
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    z-index: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    color: transparent;
+    font-size: 1pt;
+    opacity: .8;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    display: block
+}
+
+#hot-price #main-slider .owl-prev {
+    left: 0px;
+}
+
+#hot-price #main-slider .owl-next {
+    right: 0px;
+}
+
+#hot-price #main-slider .owl-prev:before {
+    content: "\f104";
+    font-family: 'FontAwesome';
+    color: #ffd419;
+    font-size: 40px;
+    left: 0;
+    color: #ffd419;
+}
+
+#hot-price #main-slider .owl-next:before {
+    content: "\f105";
+    font-family: 'FontAwesome';
+    color: #ffd419;
+    font-size: 40px;
+    right: 0;
+    color: #ffd419;
+}
+
+#hot-price #main-slider .owl-pagination .owl-page {
+    background: #939294;
+}
+
+#hot-price #main-slider .owl-pagination .owl-page.active {
+    background: #633f7b;
+}
+
+#hot-price #barra {
+    width: 100%;
+    background-color: #fff
+}
+
+#hot-price #main-carousel {
+    background: #fff;
+    height: auto;
+    background-color: #fff
+}
+
+#hot-price #main-slider .item a {
+    height: auto;
+    width: 100%;
+    color: #424242;
+    overflow: hidden
+}
+
+#hot-price #main-slider .item.item-vs a {
+    width: 50%;
+    top: 0;
+    height: 100%;
+    z-index: 4;
+    position: absolute
+}
+
+#hot-price #main-slider .item.item-vs a:first-of-type {
+    left: 0
+}
+
+#hot-price #main-slider .item.item-vs a:last-of-type {
+    right: 0
+}
+
+@media (max-width: 543px) {
+    #hot-price #main-slider .item.item-vs a {
+        width: 100%;
+        height: 35%;
+        top: inherit;
+        right: inherit;
+        left: 0
+    }
+    #hot-price #main-slider .item.item-vs a:first-of-type {
+        top: 190px;
+    }
+    #hot-price #main-slider .item.item-vs a:last-of-type {
+        bottom: 0
+    }
+}
+
+#CyberDay .discount p.todo {
+    font-size: .7em;
+    font-weight: 300;
+    line-height: 1em;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#CyberDay .disclaimer {
+    display: inline-block;
+    text-align: center
+}
+
+#CyberDay .discount {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#CyberDay .discount a {
+    text-decoration: none;
+    color: #ffffff;
+    background: #5f0c5c;
+    width: 100%;
+    height: 85px;
+    margin-bottom: 0px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    text-transform: uppercase;
+    padding: 5px 0 0;
+    min-height: 15px;
+}
+
+#CyberDay .discount a p {
+    margin: 0;
+    text-align: left;
+}
+
+#CyberDay .discount a .completo p {
+    text-align: center
+}
+
+#CyberDay .discount a>p:nth-of-type(1) {
+    font-size: .8em;
+    line-height: 15px;
+    margin-left: 2em;
+    position: relative;
+    top: 0;
+    text-transform: uppercase;
+    margin-left: 20%;
+    min-height: 15px;
+}
+
+#CyberDay .discount.otarUno a>p:nth-of-type(1) {
+    opacity: 1;
+    -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0)
+}
+
+#CyberDay .discount a>p:nth-of-type(2) {
+    text-align: center;
+    width: 100%
+}
+
+#CyberDay .discount a .descuento {
+    padding: 0
+}
+
+#CyberDay .discount a .descripcion {
+    padding-left: 5px
+}
+
+#CyberDay .discount a .descuento p {
+    font-size: 3em;
+    line-height: .8em;
+    font-weight: 500;
+    letter-spacing: -.03em;
+    text-align: right;
+    margin-left: 16%
+}
+
+#CyberDay .discount a .descripcion span:nth-of-type(1) {
+    font-size: 1.6em;
+    line-height: 1em;
+    font-weight: 400
+}
+
+#CyberDay .discount a .descripcion>p:nth-of-type(1)>span:nth-of-type(2) {
+    line-height: 1em;
+    font-size: 1.6em;
+    font-weight: 400;
+    position: relative
+}
+
+#CyberDay .discount a .descripcion span:nth-of-type(2):after {
+    content: "*";
+    font-weight: 400;
+    font-size: 1em;
+    position: relative;
+    top: -.4em
+}
+
+#CyberDay .discount a>p:nth-of-type(2)>span.dos-por:nth-of-type(2):after {
+    content: "***";
+    font-size: .6em
+}
+
+#CyberDay .discount.otarUno a>p:nth-of-type(2)>span:nth-of-type(3) {
+    padding-right: 1em
+}
+
+#CyberDay .discount.otarUno a .descripcion span:nth-of-type(2):after {
+    background-size: cover;
+    position: absolute;
+    width: 20px;
+    content: url(https://home.ripley.cl/minisitios/estatico/cyberday/h1/img/otar.png);
+    top: .25em
+}
+
+#CyberDay .discount a .descripcion span:nth-of-type(3) {
+    display: block;
+    line-height: 1em;
+    font-weight: 300;
+    font-size: .6em;
+    overflow: visible;
+    text-align: left;
+    position: relative;
+    top: 0;
+    text-transform: uppercase;
+}
+
+#CyberDay .discount a .descripcion span:nth-of-type(3):after {
+    content: "**"
+}
+
+#CyberDay .discount a>p:nth-of-type(3) {
+    font-size: .7em;
+    font-weight: 300;
+    line-height: 1em;
+    text-align: center
+}
+
+#CyberDay .discount.normal a>p:nth-of-type(3) {
+    opacity: 0;
+    -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0)
+}
+
+#CyberDay .discount a p.excluye {
+    font-size: .5em;
+    line-height: 1em
+}
+
+#CyberDay .discount a .completo {
+    text-align: center
+}
+
+#CyberDay .discount a .completo p:nth-of-type(1) {
+    font-weight: 400;
+    padding-top: 5%;
+    padding-top: 8%;
+    line-height: 20px;
+}
+
+#CyberDay .discount a .completo p:nth-of-type(2) {
+    font-weight: 400;
+    font-size: .7em;
+    color: #fff
+}
+
+#CyberDay .discount a .completo p:nth-of-type(2):after {
+    content: "**";
+    font-size: .8em;
+    line-height: 1em
+}
+
+#CyberDay .discount.otarUno a .completo p {
+    text-align: center;
+    font-weight: 500
+}
+
+#CyberDay .discount.otarUno a .completo p:after {
+    background-size: cover;
+    width: 20px;
+    content: url(https://home.ripley.cl/minisitios/estatico/cyberday/h1/img/otar.png);
+    vertical-align: -3;
+    margin-left: 2px
+}
+
+@media (max-width: 1199px) {
+    #CyberDay .discount a {
+        height: 100px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #CyberDay .discount a>p:nth-of-type(1) {
+        font-size: .5em;
+        top: .2em
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #CyberDay .discount a {
+        height: 134px
+    }
+    #CyberDay .discount a>p:nth-of-type(2)>span:nth-of-type(1) {
+        font-size: 1.9em
+    }
+    #CyberDay .discount a>p:nth-of-type(2)>span:nth-of-type(3) {
+        font-size: 1.4em;
+        position: relative
+    }
+    #CyberDay .discount a>p:nth-of-type(1) {
+        top: .2em
+    }
+}
+
+@media (max-width: 1199px) {
+    #CyberDay .discount a .descripcion>p:nth-of-type(1)>span:nth-of-type(2) {
+        line-height: 1em;
+        font-size: 1.2em
+    }
+    #CyberDay .discount a .descripcion span:nth-of-type(3) {
+        font-size: .6em
+    }
+    #CyberDay .discount a>p:nth-of-type(1) {
+        margin-left: 10%
+    }
+}
+
+@media (max-width: 992px) {
+    #CyberDay .discount a .descuento p {
+        text-align: center;
+        margin-left: 0
+    }
+    #CyberDay .discount a .descuento p:after {
+        content: "%";
+        font-size: .8em;
+        line-height: 1em;
+        font-weight: 400
+    }
+    #CyberDay .discount a .descripcion p {
+        text-align: center
+    }
+    #CyberDay .discount a .descripcion p span:nth-of-type(1) {
+        display: none
+    }
+    #CyberDay .discount a .descripcion p span:nth-of-type(3) {
+        text-align: center;
+        margin-top: 5px;
+        display: initial
+    }
+    #CyberDay .discount a .descripcion {
+        padding: 0;
+        width: 100%
+    }
+    #CyberDay .discount a .descuento {
+        width: 100%
+    }
+    #CyberDay .discount a .descripcion {
+        padding: 0;
+        width: 100%
+    }
+    #CyberDay .discount a .descuento {
+        width: 100%
+    }
+    #CyberDay .discount a {
+        height: 134px
+    }
+    #CyberDay .discount a .descripcion p span:nth-of-type(3) {
+        text-align: center;
+        line-height: 1em;
+        display: block;
+        width: 80%;
+        margin: 5px auto 0;
+        font-size: .8em
+    }
+    #CyberDay .discount a>p:nth-of-type(2)>span:nth-of-type(1) {
+        font-size: 1.9em;
+    }
+    #CyberDay .discount a>p:nth-of-type(2)>span:nth-of-type(3) {
+        font-size: 1.4em;
+        position: relative
+    }
+    #CyberDay .discount a>p:nth-of-type(1) {
+        top: .2em;
+        min-height: 20px;
+    }
+    #CyberDay .discount a .descripcion>p:nth-of-type(1)>span:nth-of-type(2) {
+        line-height: 1em;
+        font-size: 1.4em;
+        display: block;
+        text-align: center
+    }
+    #CyberDay .discount a>p:nth-of-type(2) {
+        font-size: .5em
+    }
+    #CyberDay .discount a .descuento p {
+        text-align: center;
+        margin-left: 0;
+        font-size: 2em
+    }
+}
+
+@media (max-width: 767px) {
+    #hot-price .slider .caja-color {
+        display: none;
+    }
+}
+
+@media (max-width: 544px) {
+    #CyberDay .discount a .descripcion p {
+        text-align: left
+    }
+    #CyberDay .discount a>p:nth-of-type(1) {
+        min-height: 20px;
+    }
+    #CyberDay .discount a {
+        height: 130px;
+    }
+}
