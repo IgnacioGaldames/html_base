@@ -9,11 +9,7 @@ var sourcemaps = require('gulp-sourcemaps');
 //var gulpIf = require('gulp-if');
 
 const child = require('child_process');
-
-gulp.task('hello', function() {
-    console.log('Hello Ignacio');
-});
-
+    
 /*
 gulp.task('useref', function(){
     return gulp.src('_site/*.html')
@@ -30,9 +26,9 @@ gulp.task('sass', function() {
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('_site/css'))
-        .pipe(browserSync.reload({
+        /*.pipe(browserSync.reload({
             stream: true
-        }))
+        }))*/
 });
 
 gulp.task('jekyll', function() {

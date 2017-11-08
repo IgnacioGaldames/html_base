@@ -1,6 +1,37 @@
 //Main 
-h1
-    font-family: $font-family
+#header
+    background-image: url('../img/header.jpg')
+    background-size: cover
+    background-position: top
+    background-repeat: no-repeat
+#section2
+    background-image: url('../img/section2.jpg')
+    background-position: center
+    background-repeat: no-repeat
+    background-attachment: fixed
+.modelo
+    @include max-height(600)
+h2
+    @include font-size(60)
+h3
+    @include font-size(38)
+h4, p
+    @include font-size(16)
+    font-family: "Montserrat"
+hr
+    border-color: $lilac
+.bg-img
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+.twitter-tweet-rendered
+    @extend .card
+.sociales
+    margin-top: -5px
+.bg-lilac-5
+    background: rgba($lilac, 0.75)
 @include media-breakpoint-down(md)
+    h2
+        @include font-size(40)
 
 @include media-breakpoint-down(sm)

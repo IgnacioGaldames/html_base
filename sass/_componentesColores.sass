@@ -1,14 +1,18 @@
 /* MUERE! */
 
 a, a:hover
+    display: inline-block
     text-decoration: none
     color: inherit
-    
+button
+    cursor: pointer !important
 //fonts
 h3
     text-transform: lowercase !important
 .text-white
     color: white
+.text-grey
+    color: $grey
 .text-red
     color: $red
 .text-yellow
@@ -36,12 +40,12 @@ h3
         text-decoration: none
 .btn-white 
     @extend .btn
-    border-color: $grey
-    color: $grey
+    border-color: $white
+    color: $white
     a
         color: $white
     &:hover 
-        background-color: $grey
+        background-color: $white
 .btn-red 
     @extend .btn
     border-color: $red

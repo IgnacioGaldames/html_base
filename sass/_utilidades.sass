@@ -1,13 +1,16 @@
 // Utilidades
+
 .wow
     visibility: hidden
+    z-index: 1
+    &:hover
+        z-index: 9
 *
     transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
     -webkit-transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
     -moz-transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
     -o-transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
-a
-    display: inline-block
+
 .ripley-header
     margin-bottom: 0
 .ripley-footer
@@ -16,11 +19,16 @@ a
     width: 100%
 .scale
     &:hover
+        z-index: 99
         @include scale(1.1)
+.scale-nh
+    @include scale(1.1)
 @include media-breakpoint-down(md)
     .scale
         &:hover
             @include scale(1)
+    .scale-nh
+        @include scale(1)
 .relative
     position: relative
 .absolute
@@ -30,13 +38,15 @@ a
     @include border-radius(5)
     transition: all 0.3s cubic-bezier(.25,.8,.25,1)
     overflow: hidden
+    z-index: 9
     &:hover
-        z-index: 1
+        z-index: 99
 .btn
-    @include min-width(100)
+    min-width: 100px
     &:hover
-        @include shadow4()
+        //@include shadow4()
         z-index: 1
+   
 .pointer-events-none
     pointer-events: none
 .holder
@@ -65,6 +75,20 @@ a
     @include shadow-16dp()
 .shadow-24dp
     @include shadow-24dp()
+
+.rotate-5
+    @include rotate(5)
+.rotate-10
+    @include rotate(10)
+.rotate-15
+    @include rotate(15)
+.rotate-cc-5
+    @include rotate(-5)
+.rotate-cc-10
+    @include rotate(-10)
+.rotate-cc-10
+    @include rotate(-15)
+
 
 //número
 $base-numero: 50
