@@ -1,4 +1,4 @@
-var landingName = "_site";
+var landingName = "landing_base";
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
