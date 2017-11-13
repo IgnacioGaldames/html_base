@@ -26,9 +26,9 @@ gulp.task('sass', function() {
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('_site/css'))
-        /*.pipe(browserSync.reload({
+        .pipe(browserSync.reload({
             stream: true
-        }))*/
+        }))
 });
 
 gulp.task('jekyll', function() {
@@ -51,8 +51,7 @@ gulp.task('browserSync', function() {
 gulp.task('watch', ['sass', 'jekyll', 'browserSync'], function() {
     gulp.watch(['sass/**/*.sass', 'sass/**/*.scss'], ['sass','jekyll']);
     // Other watchers
-    gulp.watch(['_source/**/*.html'], ['sass','jekyll']);
-    gulp.watch(['_source/**/*.js'], ['sass','jekyll']);
+    gulp.watch(['_source/**/*'], ['jekyll']);
     gulp.watch('_site/**/*.*').on('change', browserSync.reload);
 });
 
