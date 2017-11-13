@@ -1,4 +1,4 @@
-var landingName = "_source";
+var landingName = "_site";
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
@@ -25,7 +25,7 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('_site/css'))
+        .pipe(gulp.dest(landingName + '/css'))
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -33,7 +33,7 @@ gulp.task('sass', function() {
 
 gulp.task('jekyll', function() {
     const jekyll = child.spawn('jekyll', ['build','--watch', '--incremental'])
-    return gulp.src('_site')
+    return gulp.src(landingName)
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -42,7 +42,7 @@ gulp.task('jekyll', function() {
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: '_site',
+            baseDir: landingName,
             port: 4000
         },
     })
@@ -52,7 +52,7 @@ gulp.task('watch', ['sass', 'jekyll', 'browserSync'], function() {
     gulp.watch(['sass/**/*.sass', 'sass/**/*.scss'], ['sass','jekyll']);
     // Other watchers
     gulp.watch(['_source/**/*'], ['jekyll']);
-    gulp.watch('_site/**/*.*').on('change', browserSync.reload);
+    gulp.watch(landingName + '/**/*.*').on('change', browserSync.reload);
 });
 
 gulp.task('default', ['watch'], function() {
