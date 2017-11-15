@@ -19,9 +19,14 @@
 .full-img
     width: 100%
 .scale
+    z-index: 9
     &:hover
         z-index: 99
         @include scale(1.3)
+        .descale
+            @include scale(0.8)
+.descale
+    z-index: 9
 .scale-nh
     @include scale(1.1)
 @include media-breakpoint-down(md)
@@ -48,20 +53,61 @@
     &:hover
         //@include shadow4()
         z-index: 1
-   
 .pointer-events-none
     pointer-events: none
+.square
+    position: relative
+    width: 100%
+    overflow: hidden
+    &:after
+        content: ""
+        display: block
+        padding-bottom: 100%
+.v-rectangle
+    position: relative
+    width: 100%
+    overflow: hidden
+    &:after
+        content: ""
+        display: block
+        padding-bottom: 125%
+.h-rectangle
+    position: relative
+    width: 100%
+    overflow: hidden
+    &:after
+        content: ""
+        display: block
+        padding-bottom: 66.666666666%
 .holder
-    padding-bottom: 56.25%
-    @include min-height(400)
-.inline-holder
+    //padding-bottom: 56.25%
+    //@include min-height(400)
+    position: absolute
+    width: 100%
+    height: 100%
+    background-repeat: no-repeat
+    background-size: cover
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5)
+.inner-holder
     top: 0
     left: 0
     width: 100%
     height: 100%
+    position: absolute
+    background: rgba(0, 0, 0, 0)
+    padding: 15px
+    opacity: 1
+    transition: opacity 1s cubic-bezier(.19,1,.22,1)
+.holder:hover 
+    .inner-holder
+        opacity: 1
+        background: rgba(0, 0, 0, 0.125)
 .full-height
     height: 100vh
-
+.bg-img
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
 //sombras
 .shadow-2dp
     @include shadow-2dp()

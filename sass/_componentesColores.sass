@@ -37,7 +37,6 @@ h3
     color: $coral
     &.text-shadow
         text-shadow: 0px -1px 1px  rgba(darken($coral,33),0.75) 
-
 //botones
 .btn 
     display: block
@@ -60,6 +59,14 @@ h3
         color: $white
     &:hover 
         background-color: $white
+.btn-grey 
+    @extend .btn
+    border-color: $grey
+    color: $grey
+    a
+        color: $grey
+    &:hover 
+        background-color: $grey
 .btn-red 
     @extend .btn
     border-color: $red
@@ -111,6 +118,15 @@ h3
         color: $white
         a
             color: $white
+.bg-grey 
+    background: $grey
+    a:hover
+        .btn
+            color: $grey
+    .btn:hover
+        color: $grey
+        a
+            color: $grey
 .bg-red 
     background: $red
     a:hover 
@@ -160,6 +176,8 @@ h3
 //hr
 .hr-white
     border-color: white
+.hr-grey
+    border-color: $grey
 .hr-red
     border-color: $red
 .hr-yellow
