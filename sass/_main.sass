@@ -1,5 +1,17 @@
 //Main 
 
+h2
+    @include font-size(60)
+h3
+    @include font-size(38)
+h4, p
+    @include font-size(16)
+    font-family: "Montserrat"
+hr
+    border-color: $lilac
+
 @include media-breakpoint-down(md)
+    h2
+        @include font-size(40)
 
 @include media-breakpoint-down(sm)

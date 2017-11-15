@@ -1,28 +1,29 @@
 //Main
 
 $base-size: 16
-$font-family: 'Montserrat', sans-serif
+$font-family: 'Playfair Display', serif
 
 /* COLORS */
 
-$red: #E94E67
-$purple: #65467D
+$red: #e74360
+$purple: #b4b8c1
 $yellow: #FFD429
-$lilac: #AE82B7
-$coral: #EB637F
-$grey: #606060
+$lilac: #ecb4b2
+$coral: #fbe4e3
+$grey: #808080
 
 $mainColor: black
 $accentColor: $red
 $background-color: white
 
-.minisitio
+@import 'font-face'
+#cranberrie
     @import 'node_modules/bootstrap/scss/bootstrap.scss'
     @import 'mixins'
     @import 'utilidades'
     @import 'youtube'
-    //@include margin-reset()
-    @import 'font-face'
+    @include margin-reset()
+
     @import 'componentesColores'
     @import 'form'
     @import 'main'
