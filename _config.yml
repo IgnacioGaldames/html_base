@@ -32,6 +32,7 @@ markdown: kramdown
 
 url: http://localhost:3000
 #url: https://home.ripley.cl/minisitios/estatico/0-PRUEBA/Mantencion
+#url: http://home.ripley.cl/minisitios/estatico/
 
 baseurl: /
 #baseurl: /landing_base
