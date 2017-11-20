@@ -1,3 +1,3 @@
 # html_base
 
-html base con sass y gulp
+HTML base con SASS y Jekyll, usando gulp
