@@ -1,0 +1,29 @@
+{
+  "name": "html_base",
+  "version": "1.2.2",
+  "description": "Base html con SASS y Jekyll, usando Gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgnacioGaldames/html_base.git"
+  },
+  "keywords": [
+    "html",
+    "sass",
+    "jekyll",
+    "gulp"
+  ],
+  "author": "Ignacio Galdames",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgnacioGaldames/html_base/issues"
+  },
+  "homepage": "https://github.com/IgnacioGaldames/html_base#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}

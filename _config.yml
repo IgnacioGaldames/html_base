@@ -40,7 +40,7 @@ baseurl: /
 exclude: [fonts]
 
 source: _source
-destination: landing_base
+destination: _dist/landing_base
 
 excerpt_separator: <!--end excerpt-->
 
