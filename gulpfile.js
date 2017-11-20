@@ -4,11 +4,12 @@ const sass = require('gulp-sass'); //  the gulp-sass plugin
 const browserSync = require('browser-sync').create(); //Instalar Browsersync
 const sourcemaps = require('gulp-sourcemaps'); //Añadir sourcemaps a sass
 const child = require('child_process');
+const useref = require('gulp-useref');
 
 //Nombres de carpetas
 const source = '_source';
 const staging = '_staging';
-const distribuition = '_dist'
+const dist = '_dist'
 
 //Task de ejemplo
 gulp.task('hello', function() {
@@ -42,20 +43,28 @@ gulp.task('jekyll', function() {
       }))
 });
 
+//Concatenar JS
+gulp.task('useref', function(){
+  return gulp.src( '_staging/*.html')
+    .pipe(useref())
+    .pipe(gulp.dest('_dist'))
+});
+
 //Iniciar Browsersync
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: staging 
+      baseDir: staging
     },
   })
 })
 
 //Concatenar tasks
 
-gulp.task('watch', ['browserSync', 'compilador-sass'], function (){
+gulp.task('watch', ['browserSync', 'compilador-sass', 'jekyll'], function (){
   gulp.watch( source + '/_sass/**/*.+(scss|sass)', ['compilador-sass']);
   // Other watchers
-  gulp.watch( source + '/*.html', browserSync.reload); 
-  gulp.watch( source + '/js/**/*.js', browserSync.reload); 
+  gulp.watch( source + '/**/*', ['jekyll', 'compilador-sass']);
+  gulp.watch( staging + '/*.html', browserSync.reload); 
+  gulp.watch( staging + '/js/**/*.js', browserSync.reload); 
 })
