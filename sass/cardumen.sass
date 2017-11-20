@@ -1,26 +1,20 @@
 //Main
-$base-size: 16
-$font-family: 'Playfair Display', serif
+$base-size: 16 !default
 
 @import 'colores'
-
-$mainColor: $black
-$accentColor: $red
-$background-color: $white
-
 @import 'font-face'
 .minisitio
     @import 'node_modules/bootstrap/scss/bootstrap.scss'
+    @import 'componentesColores'
     @import 'mixins'
     @import 'utilidades'
     @import 'youtube'
-    @include margin-reset()
-
-    @import 'componentesColores'
     @import 'form'
-    @import 'main'
-    font-family: $font-family
-    overflow: hidden
-    color: $mainColor
-    background-color: $background-color
+    @include margin-reset()
+    @include selection($colorPrimario, $colorSecundario)
     @include font-size($base-size)
+    font-family: 'Playfair Display', serif
+    color: $black
+    background-color: $white
+    overflow: hidden
+    @import 'main'
