@@ -7,14 +7,10 @@ gulp.task('hello', function() {
     console.log('Hello World');
   });
 
-gulp.task('compilador-sass', function(){
-    //return gulp.src('_source/_sass/**/*.+(scss|sass)')
-    //return gulp.src('_source/_sass/cardumen.sass)')
-    return gulp.src('_source/_sass/test.sass)')
+gulp.task('sass', function(){
+    return gulp.src('_source/_sass/test.sass')
       .pipe(sass()) // Converts Sass to CSS with gulp-sass
       .pipe(gulp.dest('_staging/css'))
 });
 
-//gulp.watch('files-to-watch', ['tasks', 'to', 'run']);
-
-gulp.watch('_source/_sass/**/*.+(scss|sass)', ['compilador-sass']);
+gulp.watch('_source/_sass/**/*.+(scss|sass)', ['sass']);
