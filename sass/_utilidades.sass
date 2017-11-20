@@ -1,5 +1,4 @@
 // Utilidades
-
 .wow
     visibility: hidden
     z-index: 9
@@ -27,13 +26,13 @@
             @include scale(0.8)
 .descale
     z-index: 9
-.scale-nh
+.scale-no-hover
     @include scale(1.1)
 @include media-breakpoint-down(md)
     .scale
         &:hover
             @include scale(1)
-    .scale-nh
+    .scale-no-hover
         @include scale(1)
 .relative
     position: relative
@@ -108,7 +107,8 @@
     background-size: cover
     background-position: center center
     background-repeat: no-repeat
-//sombras
+
+//Sombras
 .shadow-2dp
     @include shadow-2dp()
 .shadow-3dp
@@ -124,6 +124,7 @@
 .shadow-24dp
     @include shadow-24dp()
 
+//Clases para rotar
 .rotate-5
     @include rotate(5)
 .rotate-10
@@ -144,7 +145,7 @@ $base-numero: 50
     @include height($base-numero)
     @include width($base-numero)
     line-height:  ($base-numero) + px
-    background-color: $accentColor
+    background-color: $colorPrimario
     text-align: center
     margin: -($base-numero/2) + px auto 0
     @include border-radius($base-numero)
