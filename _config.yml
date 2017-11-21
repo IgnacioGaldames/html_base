@@ -30,13 +30,13 @@ facebook_username: ripleychile
 # Build settings
 markdown: kramdown
 
+url: 
 #url: http://localhost:3000
 #url: https://home.ripley.cl/minisitios/estatico/0-PRUEBA/Mantencion
-url: http://home.ripley.cl/minisitios/estatico/
+#url: http://home.ripley.cl/minisitios/estatico/
 
-baseurl: _staging
-
-exclude: [fonts]
+baseurl: 
+#baseurl: _staging
 
 source: _source
 destination: _staging
