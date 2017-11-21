@@ -47,7 +47,7 @@ gulp.task('jekyll', function() {
 gulp.task('useref', function(){
   return gulp.src( '_staging/*.html')
     .pipe(useref())
-    .pipe(gulp.dest('_dist'))
+    .pipe(gulp.dest('_staging'))
 });
 
 //Iniciar Browsersync
