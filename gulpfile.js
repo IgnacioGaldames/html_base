@@ -44,11 +44,12 @@ gulp.task('jekyll', function() {
 });
 
 //Concatenar JS
+/*
 gulp.task('useref', function(){
   return gulp.src( '_staging/*.html')
     .pipe(useref())
     .pipe(gulp.dest('_staging'))
-});
+});*/
 
 //Iniciar Browsersync
 gulp.task('browserSync', function() {
