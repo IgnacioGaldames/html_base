@@ -57,6 +57,12 @@
 @mixin margin-left($margin-left)
     margin-left: ($margin-left) + px
     margin-left: ($margin-left/$base-size) + rem
+@mixin margin-x($margin-x)
+    margin: 0 ($margin-x) + px
+    margin: 0 ($margin-x/$base-size) + rem
+@mixin margin-y($margin-y)
+    margin: ($margin-y) + px 0
+    margin: ($margin-y/$base-size) + rem 0
 
 //Mixins Padding
 @mixin padding($padding)
