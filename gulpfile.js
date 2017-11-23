@@ -66,6 +66,9 @@ gulp.task('watch', ['browserSync', 'compilador-sass', 'jekyll'], function (){
   gulp.watch( source + '/_sass/**/*.+(scss|sass)', ['compilador-sass']);
   // Other watchers
   gulp.watch( source + '/**/*', ['jekyll', 'compilador-sass']);
-  gulp.watch( staging + '/*.html', browserSync.reload); 
+  gulp.watch( staging + '/**/*.html', browserSync.reload); 
   gulp.watch( staging + '/js/**/*.js', browserSync.reload); 
+})
+
+gulp.task('default', ['watch'], function() {
 })
