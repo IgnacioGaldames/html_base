@@ -1,0 +1,19 @@
+//Main
+$base-size: 16 !default
+@import 'colores'
+@import 'font-face'
+.minisitio
+    @import '../../node_modules/bootstrap/scss/bootstrap.scss'
+    @import 'componentesColores'
+    @import 'mixins'
+    @import 'utilidades'
+    @import 'youtube'
+    @import 'form'
+    @include margin-reset()
+    @include selection($colorPrimario, $colorSecundario)
+    @include font-size($base-size)
+    font-family: 'Gilroy', serif
+    color: $black
+    background-color: $white
+    overflow: hidden
+    @import 'main'

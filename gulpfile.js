@@ -1,60 +1,71 @@
-var landingName = "landing_base";
-
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
-var sourcemaps = require('gulp-sourcemaps');
-//var useref = require('gulp-useref');
-//var uglify = require('gulp-uglify');
-//var gulpIf = require('gulp-if');
-
+//Requeridos
+const gulp = require('gulp');
+const sass = require('gulp-sass'); //  the gulp-sass plugin
+const browserSync = require('browser-sync').create(); //Instalar Browsersync
+const sourcemaps = require('gulp-sourcemaps'); //Añadir sourcemaps a sass
 const child = require('child_process');
-    
+const useref = require('gulp-useref');
+
+//Nombres de carpetas
+const source = '_source';
+const staging = '_staging';
+const dist = '_dist'
+
+//Task de ejemplo
+gulp.task('hello', function() {
+    console.log('Hello World');
+  });
+
 /*
-gulp.task('useref', function(){
-    return gulp.src('_site/*.html')
-      .pipe(useref())
-      // Minifies only if it's a JavaScript file
-      .pipe(gulpIf('*.js', uglify()))
-      .pipe(gulp.dest('_site'))
-});
+gulp.task('watch', ['array', 'of', 'tasks', 'to', 'complete','before', 'watch'], function (){
+    // ...
+  })
 */
 
-gulp.task('sass', function() {
-    return gulp.src('sass/cardumen.sass')
-        .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(landingName + '/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+// Iniciar el compilador SASS
+gulp.task('compilador-sass', function(){
+    return gulp.src( source + '/_sass/*.sass')
+      .pipe(sourcemaps.init())
+      .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+      .pipe(sourcemaps.write('./')) 
+      .pipe(gulp.dest( staging + '/css'))
+      .pipe(browserSync.reload({
+        stream: true
+      }))
 });
 
+// Jekyll Task
 gulp.task('jekyll', function() {
-    const jekyll = child.spawn('jekyll', ['build','--watch', '--incremental'])
-    return gulp.src(landingName)
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+  const jekyll = child.spawn('jekyll', ['build','--watch', '--incremental'])
+  return gulp.src(source)
+      .pipe(browserSync.reload({
+          stream: true
+      }))
 });
 
+//Concatenar JS
+/*
+gulp.task('useref', function(){
+  return gulp.src( '_staging/*.html')
+    .pipe(useref())
+    .pipe(gulp.dest('_staging'))
+});*/
+
+//Iniciar Browsersync
 gulp.task('browserSync', function() {
-    browserSync.init({
-        server: {
-            baseDir: landingName,
-            port: 4000
-        },
-    })
-});
+  browserSync.init({
+    server: {
+      baseDir: staging
+    },
+  })
+})
 
-gulp.task('watch', ['sass', 'jekyll', 'browserSync'], function() {
-    gulp.watch(['sass/**/*.sass', 'sass/**/*.scss'], ['sass','jekyll']);
-    // Other watchers
-    gulp.watch(['_source/**/*'], ['jekyll']);
-    gulp.watch(landingName + '/**/*.*').on('change', browserSync.reload);
-});
+//Concatenar tasks
 
-gulp.task('default', ['watch'], function() {
-
+gulp.task('watch', ['browserSync', 'compilador-sass', 'jekyll'], function (){
+  gulp.watch( source + '/_sass/**/*.+(scss|sass)', ['compilador-sass']);
+  // Other watchers
+  gulp.watch( source + '/**/*', ['jekyll', 'compilador-sass']);
+  gulp.watch( staging + '/*.html', browserSync.reload); 
+  gulp.watch( staging + '/js/**/*.js', browserSync.reload); 
 })
