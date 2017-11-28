@@ -159,3 +159,8 @@ $base-numero: 50
 @include media-breakpoint-down(md)
     .full-height
         height: auto
+@mixin margin-reset()
+    @include margin-top(-60)
+    @include margin-bottom(-60)
+    @include media-breakpoint-down(md)
+        @include margin-bottom(-60)
