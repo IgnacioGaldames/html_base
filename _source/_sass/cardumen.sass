@@ -1,20 +1,19 @@
 //Main
-$base-size: 16 !default
-@import 'mixins'
-@import 'colores'
-@import 'font-face'
+@import 'font-face-futura'
+//@import 'font-face-gilroy'
+//@import 'font-face-montserrat'
 .minisitio
-    @import '../../node_modules/bootstrap/scss/bootstrap.scss'
-    @import 'componentesColores'
-    @import 'utilidades'
+    @import 'custom'
+    @import 'bootstrap'
     @import 'owl'
     @import 'youtube'
-    @import 'form'
-    @include margin-reset()
-    @include selection($colorPrimario, $colorSecundario)
-    @include font-size($base-size)
-    font-family: 'Gilroy', serif
-    color: $black
-    background-color: $white
+    //@import 'utilidades'
+    //@include margin-reset()
+    font-family: $font-family-base
     overflow: hidden
-    @import 'main'
+    //@import 'form'
+    //@include selection($colorPrimario, $colorSecundario)
+    //@include font-size($base-size)
+    //@import 'main'
+//$base-size: 16 !default
+//@import 'mixins'
