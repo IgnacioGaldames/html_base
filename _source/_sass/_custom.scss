@@ -7,15 +7,15 @@ $theme-colors: (
     "ripley-yellow": #ffd419,
     "ripley-lila": #ae80b8,
     "ripley-coral": #ec607d
-)
+);
 
 //Inicializar componentes inactivos
-$enable-shadows: true
-$enable-gradients: true
-$enable-hover-media-query: true
+$enable-shadows: true;
+$enable-gradients: true;
+$enable-hover-media-query: true;
 
 //Inicio Estilos Personalizados
-$font-family-base: 'Futura-Book'
+$font-family-base: 'Futura-Book';
 
 // Media Breakpoint Hacia Arriba
 //@include media-breakpoint-up(xs)
