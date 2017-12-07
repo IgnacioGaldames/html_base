@@ -1,0 +1,38 @@
+// Your variable overrides
+$ripley-red: #e94964;
+$ripley-purple: #633f7b;
+$ripley-yellow: #ffd419;
+$ripley-lila: #ae80b8;
+$ripley-coral: #ec607d;
+$ripley-white: #fff;
+$ripley-grey: #f4f4f4;
+$ripley-black: #000;
+
+// Colores Manifiesto
+$theme-colors: (
+	"ripley-red": $ripley-red,
+    "ripley-purple": $ripley-purple,
+    "ripley-yellow": $ripley-yellow,
+    "ripley-lila": $ripley-lila,
+    "ripley-coral": $ripley-coral,
+    "ripley-white": $ripley-white,
+    "ripley-grey": $ripley-grey,
+    "ripley-black": $ripley-black
+);
+
+//Inicializar componentes inactivos
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-hover-media-query: true;
+
+//Resetar fonts
+$font-size-base:              1rem !default;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.33;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+//Inicio Estilos Personalizados
+@import 'main';

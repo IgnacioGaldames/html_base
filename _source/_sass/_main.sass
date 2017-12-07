@@ -1,7 +1,17 @@
 //Main 
+$font-family-base: 'Futura'
 
+//resets
+.btn
+    border-radius: 2rem !important
+.modal
+    z-index: 4050 !important
+    overflow: scroll !important
 //Inicio Estilos Personalizados
 
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/mixins/_breakpoints'
 
 // Media Breakpoint Hacia Arriba
 //@include media-breakpoint-up(xs)
@@ -13,7 +23,9 @@
 // Media Breakpoint Hacia Abajo
 //@include media-breakpoint-down(xs)
 //@include media-breakpoint-down(sm)
-//@include media-breakpoint-down(md)
+@include media-breakpoint-down(md)
+    h2, .h2
+        font-size:  $font-size-base * 1.2 !important
 //@include media-breakpoint-down(lg)
 
 // Media Breakpoint Hacia Específica
