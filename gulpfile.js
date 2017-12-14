@@ -31,7 +31,7 @@ gulp.task('compilador-sass', function(){
       .pipe(gulp.dest( staging + '/css'))
       .pipe(browserSync.reload({
         stream: true
-      }))
+  }))
 });
 
 // Jekyll Task

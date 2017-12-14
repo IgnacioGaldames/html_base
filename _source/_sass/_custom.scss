@@ -5,7 +5,7 @@ $ripley-yellow: #ffd419;
 $ripley-lila: #ae80b8;
 $ripley-coral: #ec607d;
 $ripley-white: #fff;
-$ripley-grey: #f4f4f4;
+$ripley-grey: #808080;
 $ripley-black: #000;
 
 // Colores Manifiesto
@@ -34,5 +34,19 @@ $h3-font-size: $font-size-base * 1.5;
 $h4-font-size: $font-size-base * 1.33;
 $h5-font-size: $font-size-base * 1.25;
 $h6-font-size: $font-size-base;
+
+//resets
+.btn {
+    border-radius: 2rem !important;
+    @include margin(10);
+}
+.modal {
+    z-index: 4050 !important;
+    overflow: scroll !important;
+}
+.btn-outline-ripley-white:hover {
+    color: $ripley-grey !important;
+}
+
 //Inicio Estilos Personalizados
 @import 'main';
