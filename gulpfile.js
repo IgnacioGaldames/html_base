@@ -24,11 +24,11 @@ gulp.task('watch', ['array', 'of', 'tasks', 'to', 'complete','before', 'watch'],
 
 // Iniciar el compilador SASS
 gulp.task('compilador-sass', function(){
-    return gulp.src( source + '/_sass/*.sass')
+    return gulp.src( source + '/_sass/**.+(scss|sass)')
       .pipe(sourcemaps.init())
       .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
       .pipe(sourcemaps.write('./')) 
-      .pipe(gulp.dest( staging + '/css'))
+      .pipe(gulp.dest( source + '/css'))
       .pipe(browserSync.reload({
         stream: true
   }))
