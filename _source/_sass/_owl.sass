@@ -1,4 +1,6 @@
-.slider 
+.owl-wrapper
+    transition: all 1000ms !important;
+.slider, .slider-marcas 
     .figure img
         display: block
         margin: 0 auto
@@ -11,18 +13,34 @@
     .owl-buttons
         position: absolute
         color: white
-        font-size: 50px
-        top: 45%
         width: 100%
     .owl-prev, .owl-next
         position: absolute
-        opacity: 0.5
+        opacity: 0.75
         transition: opacity 1s cubic-bezier(.19,1,.22,1)
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)
+        &:hover
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.75)
+            opacity: 1
+    .owl-item
+        text-align: center
+.slider-marcas
+    .owl-prev
+        left: -15px
+    .owl-next
+        right: -15px
+    .owl-buttons
+        top: 33%
+        font-size: 30px
+.slider
     .owl-prev
         left: 15px
     .owl-next
         right: 15px
-    .owl-prev:hover, .owl-next:hover
-        opacity: 1
-    .owl-item
-        text-align: center
+    .owl-buttons
+        top: 45%
+        font-size: 45px
+@include media-breakpoint-down(md)
+    .slider, .slider-marcas 
+        .owl-buttons
+            font-size: 30px !important

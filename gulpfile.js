@@ -5,6 +5,12 @@ const browserSync = require('browser-sync').create(); //Instalar Browsersync
 const sourcemaps = require('gulp-sourcemaps'); //Añadir sourcemaps a sass
 const child = require('child_process');
 const useref = require('gulp-useref');
+const uglify = require('gulp-uglify');
+const gulpIf = require('gulp-if');
+const cssnano = require('gulp-cssnano');
+const imagemin = require('gulp-imagemin');
+const runSequence = require('run-sequence');
+const del = require('del');
 
 //Nombres de carpetas
 const source = '_source';
@@ -44,12 +50,36 @@ gulp.task('jekyll', function() {
 });
 
 //Concatenar JS
-/*
 gulp.task('useref', function(){
-  return gulp.src( '_staging/*.html')
+  return gulp.src(staging + '/*.html')
     .pipe(useref())
-    .pipe(gulp.dest('_staging'))
-});*/
+    // Minifies only if it's a JavaScript file
+    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulpIf('*.css', cssnano()))
+    .pipe(gulp.dest(dist))
+});
+
+//Minificar Imágenes
+gulp.task('images', function(){
+  return gulp.src( staging + '/img/**/*.+(png|jpg|gif|svg)')
+  // Caching images that ran through imagemin
+  .pipe(cache(imagemin({
+    interlaced: true
+  })))
+  .pipe(gulp.dest( dist + '/img'))
+});
+
+//Copiar Fuentes
+gulp.task('fonts', function() {
+  return gulp.src(staging + '/fonts/**/*')
+  .pipe(gulp.dest( dist + '/fonts'))
+})
+
+//Copiar CSS
+gulp.task('css', function() {
+  return gulp.src(staging + '/css/**/*')
+  .pipe(gulp.dest( dist + '/css'))
+})
 
 //Iniciar Browsersync
 gulp.task('browserSync', function() {
@@ -61,14 +91,28 @@ gulp.task('browserSync', function() {
 })
 
 //Concatenar tasks
-
-gulp.task('watch', ['browserSync', 'compilador-sass', 'jekyll'], function (){
+gulp.task('watch', function (){
   gulp.watch( source + '/_sass/**/*.+(scss|sass)', ['compilador-sass']);
   // Other watchers
   gulp.watch( source + '/**/*', ['jekyll', 'compilador-sass']);
   gulp.watch( staging + '/**/*.html', browserSync.reload); 
-  gulp.watch( staging + '/js/**/*.js', browserSync.reload); 
+  gulp.watch( staging + '/js/**/*.js', browserSync.reload);
 })
 
-gulp.task('default', ['watch'], function() {
+//Limpiar carpeta Dist
+gulp.task('clean:dist', function() {
+  return del.sync(dist);
+})
+
+gulp.task('build', function (callback) {
+  runSequence('clean:dist', 
+    ['sass', 'useref', 'images', 'fonts'],
+    callback
+  )
+})
+
+gulp.task('default', function (callback) {
+  runSequence(['compilador-sass','browserSync', 'watch', 'jekyll'],
+    callback
+  )
 })
