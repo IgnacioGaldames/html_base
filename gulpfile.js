@@ -35,18 +35,19 @@ gulp.task('compilador-sass', function(){
       .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
       .pipe(sourcemaps.write('./')) 
       .pipe(gulp.dest( source + '/css'))
-      .pipe(browserSync.reload({
+      /*.pipe(browserSync.reload({
         stream: true
-  }))
+  }))*/
 });
 
 // Jekyll Task
 gulp.task('jekyll', function() {
   const jekyll = child.spawn('jekyll', ['build','--watch', '--incremental'])
   return gulp.src(source)
+  /*
       .pipe(browserSync.reload({
           stream: true
-      }))
+      }))*/
 });
 
 //Concatenar JS
@@ -94,9 +95,9 @@ gulp.task('browserSync', function() {
 gulp.task('watch', function (){
   gulp.watch( source + '/_sass/**/*.+(scss|sass)', ['compilador-sass']);
   // Other watchers
-  gulp.watch( source + '/**/*', ['jekyll', 'compilador-sass']);
+  gulp.watch( source + '/**/*', ['jekyll', browserSync.reload]);
   gulp.watch( staging + '/**/*.html', browserSync.reload); 
-  gulp.watch( staging + '/js/**/*.js', browserSync.reload);
+  //gulp.watch( staging + '/js/**/*.js', browserSync.reload);
 })
 
 //Limpiar carpeta Dist
@@ -112,7 +113,7 @@ gulp.task('build', function (callback) {
 })
 
 gulp.task('default', function (callback) {
-  runSequence(['compilador-sass','browserSync', 'watch', 'jekyll'],
+  runSequence(['compilador-sass', 'jekyll', 'browserSync', 'watch'],
     callback
   )
 })
