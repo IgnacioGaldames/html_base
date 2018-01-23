@@ -17,7 +17,8 @@ $theme-colors: (
     "ripley-coral": $ripley-coral,
     "ripley-white": $ripley-white,
     "ripley-grey": $ripley-grey,
-    "ripley-black": $ripley-black
+    "ripley-black": $ripley-black,
+    "danger": #d0112b
 );
 
 //Inicializar componentes inactivos
@@ -36,10 +37,8 @@ $h5-font-size: $font-size-base * 1.25;
 $h6-font-size: $font-size-base;
 
 //resets
-.btn {
-    border-radius: 2rem !important;
-    @include margin(10);
-}
+
+
 .modal {
     z-index: 4050 !important;
     overflow: scroll !important;

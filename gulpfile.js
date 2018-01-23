@@ -42,7 +42,7 @@ gulp.task('compilador-sass', function(){
 
 // Jekyll Task
 gulp.task('jekyll', function() {
-  const jekyll = child.spawn('jekyll', ['build','--watch', '--incremental'])
+  const jekyll = child.spawn('jekyll', ['LC_ALL=en_US.UTF-8', 'build','--watch', '--incremental'])
   return gulp.src(source)
   /*
       .pipe(browserSync.reload({

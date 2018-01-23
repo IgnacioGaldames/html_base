@@ -1,7 +1,14 @@
 $base-size: 16
+
+@import '../../node_modules/bootstrap/scss/_functions'
+@import '../../node_modules/bootstrap/scss/_variables'
+@import '../../node_modules/bootstrap/scss/mixins/_breakpoints'
+
 @mixin margin-reset()
     margin-top: -30px !important
-    margin-bottom: -30px !important
+    margin-bottom: -40px !important
+@include media-breakpoint-down(sm)
+    margin-bottom: -60px !important
 
 @mixin scale($scale-factor)
     transform: scale($scale-factor)
