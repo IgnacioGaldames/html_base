@@ -137,3 +137,16 @@ $shadow-ambient-shadow-opacity: 0.12 !default
 
 @mixin shadow-24dp()
     box-shadow: 0  9px 46px  8px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 11px 15px -7px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 24px 38px  3px rgba(0, 0, 0, $shadow-key-umbra-opacity)
+
+//marco Ripley
+
+@mixin marco($color-1, $color-2)
+    -moz-border-image: -moz-linear-gradient(top, $color-1 0%, $color-2 100%)
+    -webkit-border-image: -webkit-linear-gradient(top, $color-1 0%, $color-2 100%)
+    border-image: linear-gradient(to bottom, $color-1 0%, $color-2 100%)
+    border-image-slice: 1
+@mixin marco-45($color-1, $color-2, $color-3)
+    -moz-border-image: -moz-linear-gradient(left, $color-1 0%, $color-2 50%, $color-3 100%)
+    -webkit-border-image: -webkit-linear-gradient(left, $color-1 50%, $color-2 0%, $color-3 100%)
+    border-image: linear-gradient(to right, $color-1 0%, $color-2 50%, $color-3 100%)
+    border-image-slice: 1

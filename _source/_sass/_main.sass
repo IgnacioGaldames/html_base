@@ -8,6 +8,10 @@ $background-color: $ripley-purple
 @import '../../node_modules/bootstrap/scss/_variables'
 @import '../../node_modules/bootstrap/scss/mixins/_breakpoints'
 
+.marco-ripley-a
+    @include marco($ripley-coral, $ripley-yellow)
+    @extend .marco
+
 // Media Breakpoint Hacia Arriba
 //@include media-breakpoint-up(xs)
 //@include media-breakpoint-up(sm)
@@ -18,9 +22,7 @@ $background-color: $ripley-purple
 // Media Breakpoint Hacia Abajo
 //@include media-breakpoint-down(xs)
 //@include media-breakpoint-down(sm)
-@include media-breakpoint-down(md)
-    h2, .h2
-        @include font-size(16)
+//@include media-breakpoint-down(md)
 //@include media-breakpoint-down(lg)
 
 // Media Breakpoint Hacia Específica
