@@ -1,13 +1,18 @@
 <html>
     <head>
         {% include head.html %}
-        {% include mini-site-styles.html %}
+        {% include ripley-styles.html %}
+        <mini-site-styles>
+            {% include mini-site-styles.html %}
+        </mini-site-styles>
     </head>
     <body>
         <mini-site>
         {{ content }}
         </mini-site>
-        {% include scripts.html %}
-        {% include mini-site-scripts.html %}
+        {% include ripley-scripts.html %}
+        <mini-site-scripts>
+            {% include mini-site-scripts.html %}
+        </mini-site-scripts>
     </body>
 </html>
