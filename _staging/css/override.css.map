@@ -1,1 +1,0 @@
-{"version":3,"file":"override.css","sources":["override.sass"],"sourcesContent":["// Añadir override por emergencias.\n//Crash Override\n.minisitio {\n    background-color: inherit;\n    color: inherit; }\n"],"names":[],"mappings":"AAEA,AAAA,UAAU,AAAC,CACP,gBAAgB,CAAE,OAAO,CACzB,KAAK,CAAE,OAAO,CAAI"}

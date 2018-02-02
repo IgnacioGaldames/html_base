@@ -35,14 +35,3 @@ $h3-font-size: $font-size-base * 1.5;
 $h4-font-size: $font-size-base * 1.33;
 $h5-font-size: $font-size-base * 1.25;
 $h6-font-size: $font-size-base;
-
-//resets
-
-
-.modal {
-    z-index: 4050 !important;
-    overflow: scroll !important;
-}
-.btn-outline-ripley-white:hover {
-    color: $ripley-grey !important;
-}

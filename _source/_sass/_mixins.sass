@@ -89,7 +89,7 @@ $base-size: 16
     padding-left: ($padding-left) + px
     padding-left: ($padding-left/$base-size) + rem
 
-/* Gradientes*/
+// Gradientes
 @mixin linear-gradient($color1, $color2)
     background: -webkit-linear-gradient($color1, $color2)
     background: -o-linear-gradient($color1, $color2)
@@ -101,18 +101,18 @@ $base-size: 16
     background: -moz-linear-gradient($color1, $color2), url($img)
     background: linear-gradient($color1, $color2), url($img)
 
-/* Rotar */
+// Rotar
 @mixin rotate($angle)
     -ms-transform: rotate($angle + deg)
     -webkit-transform: rotate($angle + deg)
     transform: rotate($angle + deg)
 
-/* Selection */
-@mixin selection($colorTexto, $colorFondo)
+// Selection
+@mixin selection($colorFondo, $colorTexto)
     color: $colorTexto
     background: $colorFondo
 
-/* SHADOWS */
+// SHADOWS
 $shadow-key-umbra-opacity: 0.2 !default
 $shadow-key-penumbra-opacity: 0.14 !default
 $shadow-ambient-shadow-opacity: 0.12 !default
@@ -138,7 +138,7 @@ $shadow-ambient-shadow-opacity: 0.12 !default
 @mixin shadow-24dp()
     box-shadow: 0  9px 46px  8px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 11px 15px -7px rgba(0, 0, 0, $shadow-ambient-shadow-opacity), 0 24px 38px  3px rgba(0, 0, 0, $shadow-key-umbra-opacity)
 
-//marco Ripley
+// marco Ripley
 
 @mixin marco($color-1, $color-2)
     -moz-border-image: -moz-linear-gradient(top, $color-1 0%, $color-2 100%)

@@ -1,0 +1,15 @@
+.marco
+    border-style: solid
+    border-width: 8px
+    width: calc(100% - 16px)
+    height: calc(100% - 16px)
+    position: absolute
+    z-index: 10
+    margin: 8px
+    pointer-events: none
+.marco-ripley-a
+    @include marco($ripley-coral, $ripley-yellow)
+    @extend .marco
+.marco-ripley-b
+    @include marco-45($ripley-coral, $ripley-yellow, $ripley-purple)
+    @extend .marco
