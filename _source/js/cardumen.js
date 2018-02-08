@@ -93,7 +93,6 @@ $(document).ready(function() {
                     } else {
                         html += "<p class='precio_otar final'> $" + precio_otar_format + "</p>";
                         //html += "<p class='precio_normal'>Precio normal: $"+precio_normal_format+" / <span class='stock'>"+stock+" unidades</span></p>";
-
                         html += "<p class='precio_normal'>Precio normal: $" + precio_normal_format + "</p>";
                     }
                 }
