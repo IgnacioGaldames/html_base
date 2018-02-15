@@ -33,7 +33,6 @@ $backgroundColor: $ripley-white
 .modal
     z-index: 4050 !important
     overflow: scroll !important
-
 .card
     @include shadow-4dp()
     @include border-radius(5)
@@ -43,6 +42,20 @@ $backgroundColor: $ripley-white
     &:hover
         z-index: 99
         @include shadow-8dp()
+//Básicos
+.opex
+    &::after
+        background-image: url('../assets/opex-red.png')
+        background-size: 30px 30px
+        display: inline-block
+        width: 30px
+        height: 30px
+        content: ''
+        margin-left: 5px
+        @include media-breakpoint-down(md)
+            background-size: 20px 20px
+            width: 20px
+            height: 20px
 
 // Importar las Utilidades necesarias según el caso
 //@import 'owl'
