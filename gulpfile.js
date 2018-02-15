@@ -30,11 +30,11 @@ gulp.task('watch', ['array', 'of', 'tasks', 'to', 'complete','before', 'watch'],
 
 // Iniciar el compilador SASS
 gulp.task('compilador-sass', function(){
-    return gulp.src( source + '/_sass/**.+(scss|sass)')
+    return gulp.src( staging + '/_sass/**.+(scss|sass)')
       .pipe(sourcemaps.init())
       .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
       .pipe(sourcemaps.write('./')) 
-      .pipe(gulp.dest( source + '/css'))
+      .pipe(gulp.dest( staging + '/css'))
       /*.pipe(browserSync.reload({
         stream: true
   }))*/
@@ -95,7 +95,7 @@ gulp.task('browserSync', function() {
 gulp.task('watch', function (){
   gulp.watch( source + '/_sass/**/*.+(scss|sass)', ['compilador-sass']);
   // Other watchers
-  gulp.watch( source + '/**/*', ['jekyll', browserSync.reload]);
+  //gulp.watch( source + '/**/*', ['jekyll', browserSync.reload]);
   gulp.watch( staging + '/**/*.html', browserSync.reload); 
   //gulp.watch( staging + '/js/**/*.js', browserSync.reload);
 })
@@ -112,8 +112,14 @@ gulp.task('build', function (callback) {
   )
 })
 
-gulp.task('default', function (callback) {
+/*gulp.task('default', function (callback) {
   runSequence(['compilador-sass', 'jekyll', 'browserSync', 'watch'],
+    callback
+  )
+})*/
+
+gulp.task('default', function (callback) {
+  runSequence(['compilador-sass', 'browserSync', 'watch'],
     callback
   )
 })
