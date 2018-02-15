@@ -100,6 +100,8 @@ gulp.task('watch', function() {
     // Other watchers
     //gulp.watch(source + '/**/*', ['jekyll', browserSync.reload]);
     gulp.watch(staging + '/**/*.html', browserSync.reload);
+    gulp.watch(staging + '/**/*.css', browserSync.reload);
+    gulp.watch(staging + '/**/*.js', browserSync.reload);
     //gulp.watch( staging + '/js/**/*.js', browserSync.reload);
 })
 
