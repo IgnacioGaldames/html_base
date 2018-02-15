@@ -38,88 +38,95 @@ $(document).ready(function () {
 
                 const esMarketplace = Boolean(response.isMarketplaceProduct);
                 const esSinStock = Boolean(response.isOutOfStock);
-                const esNoDisponible = Boolean(response.isUnavailable);
-                
+                const sonoDisponible = Boolean(response.isUnavailable);
+
                 var htmlPrecioNormal = '<p class="precio-normal">' + precioNormal + '</p>';
                 var htmlPrecioInternet = '<p class="precio-internet">' + precioInternet + '</p>';
-                var htmlPrecioOpex = '<p class="precio-opex">' + precioOpex + '</p>';
+                var htmlPrecioOpex = '<p class="precio-opex opex">' + precioOpex + '</p>';
                 var htmlTotalDescuento = '<p class="total-descuento">' + totalDescuento + '</p>';
+                var htmlFinal = ' class="final" ';
 
-                miHtml += htmlPrecioNormal + htmlPrecioInternet + htmlPrecioOpex ;
+                //miHtml += htmlPrecioNormal + htmlPrecioInternet + htmlPrecioOpex;
 
+                // Si todos los precios son distintos de null
                 if (!isNaN(precioNormalNoformat) && !isNaN(preciointernetNoformat) && !isNaN(precioOpexNoformat)) {
-                    // En caso de que todos los precios sean iguales, se queda el precio otar
+                    console.log('todos los precios son distintos de null');
+
+                    // Si todos los precios son iguales, se queda el precio opex
                     if (precioNormalNoformat == preciointernetNoformat && precioNormalNoformat == precioOpexNoformat && preciointernetNoformat == precioOpexNoformat) {
-                        html += "<p class='precio-opex final'> $" + htmlPrecioOpex + "</p>";
-                        // En caso de que solo el precio normal sea igual al precio internet 
-                    } else if (precioNormalNoformat == preciointernetNoformat && precioNormalNoformat != precioOpexNoformat && preciointernetNoformat != precioOpexNoformat) {
-                        html += "<p class='precio-opex final'> $" + htmlPrecioOpex + "</p>";
-                        html += "<p class='preciointernetNoformat'>Precio internet: $" + preciointernetNoformat + "</p>";
-
-                        // En caso de que el precio normal es igual al precio otar
-                    } else if (precioNormalNoformat != preciointernetNoformat && precioNormalNoformat == precioOpexNoformat && preciointernetNoformat != precioOpexNoformat) {
-                        html += "<p class='precio-opex final'> $" + htmlPrecioOpex + "</p>";
-                        html += "<p class='preciointernetNoformat'>Precio internet: $" + preciointernetNoformat + "</p>";
-
-                        // En caso de que el precio internet sea igual al precio otar
-                    } else if (precioNormalNoformat != preciointernetNoformat && precioNormalNoformat != precioOpexNoformat && preciointernetNoformat == precioOpexNoformat) {
-                        html += "<p class='precio-opex final'> $" + htmlPrecioOpex + "</p>";
-                        //html += "<p class='precioNormalNoformat'>Precio normal: $"+precioNormalNoformat+" / <span class='stock'>"+stock+" unidades</span></p>";
-                        html += "<p class='precioNormalNoformat'>Precio normal: $" + precioNormalNoformat + "</p>";
-                        // En caso de que todos los precios sean distintos
-                    } else if (precioNormalNoformat != preciointernetNoformat && precioNormalNoformat != precioOpexNoformat && preciointernetNoformat != precioOpexNoformat) {
-                        html += "<p class='precioOpexNoformat final'> $" + precioOpexNoformat + "</p>";
-                        html += "<p class='precioNormalNoformat'>Precio normal: $" + precioNormalNoformat + "</p>";
-                        html += "<p class='preciointernetNoformat'>Precio internet: $" + preciointernetNoformat + "</p>";
-
-                        //html += "<p class='precioNormalNoformat'>Precio normal: $"+precioNormalNoformat+" / <span class='stock'>"+stock+" unidades</span></p>";
+                        miHtml += htmlPrecioOpex;
+                    } 
+                    // Si solo el precio normal es igual al precio internet
+                    else if (precioNormalNoformat  == preciointernetNoformat && precioNormalNoformat  != precioOpexNoformat && preciointernetNoformat != precioOpexNoformat) {
+                        miHtml += htmlPrecioOpex;
+                        miHtml += htmlPrecioInternet;
                     }
-                    // En caso de qu solo el precio otar sea null
-                } else if (!isNaN(precioNormalNoformat) && !isNaN(preciointernetNoformat) && isNaN(precioOpexNoformat)) {
-                    // En caso de que el precio normal sea igual al precio internet
-                    if (precioNormalNoformat == preciointernetNoformat || precioNormalNoformat < preciointernetNoformat) {
-                        html += "<p class='preciointernetNoformat final'> $" + preciointernetNoformat + "</p>";
-                        // En caso de que los precios sean distintos
-                    } else {
-                        html += "<p class='precioNormalNoformat'>Precio normal: $" + precioNormalNoformat + "</p>";
-                        html += "<p class='preciointernetNoformat final'> $" + preciointernetNoformat + "</p>";
-                        //html += "<p class='precioNormalNoformat'>Precio normal: $"+precioNormalNoformat+" / <span class='stock'>"+stock+" unidades</span></p>";
+                     // Si el precio normal es igual al precio opex
+                    else if (precioNormalNoformat  != preciointernetNoformat && precioNormalNoformat  == precioOpexNoformat && preciointernetNoformat != precioOpexNoformat) {
+                        miHtml += htmlPrecioOpex;
+                        miHtml += htmlPrecioInternet;
+                    } 
+                     // Si el precio internet es igual al precio opex
+                    else if (precioNormalNoformat  != preciointernetNoformat && precioNormalNoformat  != precioOpexNoformat && preciointernetNoformat == precioOpexNoformat) {
+                        miHtml += htmlPrecioOpex;
+                        miHtml += htmlPrecioNormal;
                     }
-                    
-                }
-                // Si el precio normal es undefined
-                else if (isNaN(precioNormalNoformat) && !isNaN(preciointernetNoformat) && !isNaN(precioOpexNoformat)) {
-                    // En caso de que el precio internet sea igual al precio otar
-                    if (preciointernetNoformat == precioOpexNoformat || preciointernetNoformat < precioOpexNoformat) {
-                        html += "<p class='precioOpexNoformat final'> $" + htmlPrecioOpex + "</p>";
-                        // En caso de que los precios sean distintos
-                    } else {
-                        html += "<p class='precioOpexNoformat final'> $" + htmlPrecioOpex + "</p>";
-                        html += "<p class='preciointernetNoformat'>Precio internet: $" + preciointernetNoformat + "</p>";
-
-                    }
-                    // En caso de que el precio internet sea null
-                } else if (!isNaN(precioNormalNoformat) && isNaN(preciointernetNoformat) && !isNaN(precioOpexNoformat)) {
-                    // En caso de que el precio normal sea igual al precio otar
-                    if (precioNormalNoformat == precioOpexNoformat || precioNormalNoformat < precioOpexNoformat) {
-                        html += "<p class='precioOpexNoformat final'> $" + htmlPrecioOpex + "</p>";
-                        // En caso de que los precios sean distintos
-                    } else {
-                        html += "<p class='precioOpexNoformat final'> $" + htmlPrecioOpex + "</p>";
-                        //html += "<p class='precioNormalNoformat'>Precio normal: $"+precioNormalNoformat+" / <span class='stock'>"+stock+" unidades</span></p>";
-                        html += "<p class='precioNormalNoformat'>Precio normal: $" + precioNormalNoformat + "</p>";
+                    // Si todos los precios son distintos
+                    else if (precioNormalNoformat  != preciointernetNoformat && precioNormalNoformat  != precioOpexNoformat_format && preciointernetNoformat != precioOpexNoformat) {
+                        miHtml += htmlPrecioOpex;
+                        miHtml += htmlPrecioNormal;
+                        miHtml += htmlPrecioInternet;
                     }
                 }
-                
+                // Si solo el precio normal es null
+                else if (isNaN(precioNormalNoformat ) && !isNaN(preciointernetNoformat) && !isNaN(precio_otar)) {
+                    console.log('solo el precio normal es null');
+                    // Si el precio internet es igual al precio opex
+                    if (preciointernetNoformat == precioOpexNoformat || preciointernetNoformat < precio_otar) {
+                        miHtml += htmlPrecioOpex;     
+                    }
+                    // Si los precios son distintos
+                    else {
+                        miHtml += htmlPrecioOpex;
+                        miHtml += htmlPrecioInternet;
+                    }
+                }
+                 // Si el precio internet es null
+                 else if (!isNaN(precioNormalNoformat) && isNaN(preciointernetNoformat) && !isNaN(precioOpexNoformat)) {
+                    console.log('el precio internet es null');
+                    // Si el precio normal es igual al precio opex
+                    if (precioNormalNoformat  == precioOpexNoformat || precioNormalNoformat  < precio_otar) {
+                        miHtml += htmlPrecioOpex;
+                        
+                    } 
+                    // Si los precios son distintos
+                    else {
+                        miHtml += htmlPrecioOpex;
+                        miHtml += htmlPrecioNormal;
+                    }
+                }               
+                // Si el precio Opex es null
+                else if (!isNaN(precioNormalNoformat) && !isNaN(preciointernetNoformat) && isNaN(precioOpexNoformat)) {
+                    console.log('el precio opex es null');
+                    // Si el precio normal es igual al precio internet
+                    if (precioNormalNoformat == preciointernetNoformat|| precioNormalNoformat < preciointernetNoformat) {
+                        miHtml += '<span' + htmlFinal + '> ' + htmlPrecioInternet + "</span>";
+                    }
+                    // Si los precios normal e internet son distintos
+                    else {
+                        miHtml += '<span' + htmlFinal + '> ' + htmlPrecioInternet + "</span>";
+                        miHtml += htmlPrecioNormal;
+                    }
+                }
+
                 // Inyectar los datos obtenidos desde la url
-
-                html += '<a href="' + urlRipley + urlProducto + '">';
-                html += '<figure class="item">';
-                html += '<img src="' + imagenThumbnail + '" alt="' + nombreProducto.toLowerCase() + '">';
-                html += '</figure></a>';
+                miHtml += '<a href="' + urlRipley + urlProducto + '">';
+                miHtml += '<figure class="item">';
+                miHtml += '<img src="' + imagenThumbnail + '" alt="' + nombreProducto.toLowerCase() + '">';
+                miHtml += '</figure></a>';
                 productoDinamico.append(miHtml);
 
-                console.log(idCorta,idLarga,nombreProducto,descripcionCorta,descripcionlarga,urlProducto,imagenThumbnail,imagenCompleta,esMarketplace,esSinStock,esNoDisponible,precioNormal,precioInternet,precioOpex,totalDescuento,porcentajeDescuento,puntosRipley);
+                //console.log(idCorta, idLarga, nombreProducto, descripcionCorta, descripcionlarga, urlProducto, imagenThumbnail, imagenCompleta, esMarketplace, esSinStock, sonoDisponible, precioNormal, precioInternet, precioOpex, totalDescuento, porcentajeDescuento, puntosRipley);
             },
             error: function () {
                 productoDinamico.remove();
