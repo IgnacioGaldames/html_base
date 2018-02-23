@@ -8,7 +8,7 @@
 $mainColor: $ripley-grey
 $backgroundColor: $ripley-white
 
-//más resets necesarios
+//mas resets necesarios
 *
     transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
     -webkit-transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
@@ -42,13 +42,13 @@ $backgroundColor: $ripley-white
     &:hover
         z-index: 99
         @include shadow-8dp()
-//Básicos
+//Basicos
 @import '_utilidades/precios'
 p
     margin: 0
 
-// Importar las Utilidades necesarias según el caso
-//@import 'owl'
+// Importar las Utilidades necesarias segun el caso
+@import 'owl'
 //@import '_utilidades/youtube'
 //@import '_utilidades/marco-ripley'
 //@import '_utilidades/scales'
@@ -71,7 +71,7 @@ p
 //@include media-breakpoint-down(md)
 //@include media-breakpoint-down(lg)
 
-// Media Breakpoint Hacia Específica
+// Media Breakpoint Hacia Especifica
 //@include media-breakpoint-only(xs)
 //@include media-breakpoint-only(sm)
 //@include media-breakpoint-only(md)
