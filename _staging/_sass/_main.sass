@@ -5,9 +5,8 @@
 @import '../../node_modules/bootstrap/scss/mixins/_breakpoints'
 
 //Variables
-$mainColor: $ripley-grey
-$backgroundColor: $ripley-white
-
+$mainColor: $blanco
+$backgroundColor: $azul-obscuro
 //mas resets necesarios
 *
     transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
@@ -15,9 +14,9 @@ $backgroundColor: $ripley-white
     -moz-transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
     -o-transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 ::-moz-selection
-    @include selection( $ripley-red, $ripley-white)
+    @include selection( $verde, $blanco)
 ::selection
-    @include selection( $ripley-red, $ripley-white)
+    @include selection( $verde, $blanco)
 .wow
     visibility: hidden
     z-index: 9
@@ -29,7 +28,7 @@ $backgroundColor: $ripley-white
         //@include shadow4()
         z-index: 1
 .btn-outline-ripley-white:hover
-    color: $ripley-grey !important
+    color: $verde !important
 .modal
     z-index: 4050 !important
     overflow: scroll !important
@@ -42,6 +41,8 @@ $backgroundColor: $ripley-white
     &:hover
         z-index: 99
         @include shadow-8dp()
+p
+    color: $blanco
 //Basicos
 @import '_utilidades/precios'
 p

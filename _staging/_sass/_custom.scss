@@ -1,24 +1,27 @@
 // Your variable overrides
-$ripley-red: #e94964;
-$ripley-purple: #633f7b;
-$ripley-yellow: #ffd419;
-$ripley-lila: #ae80b8;
-$ripley-coral: #ec607d;
-$ripley-white: #fff;
-$ripley-grey: #808080;
-$ripley-black: #000;
+
+$cafe: #61250c;
+$naranja: #e9501d;
+$negro: #0b0700;
+$azul-obscuro: #35313c;
+$celeste: #009ee3;
+$verde-obscuro: #356753;
+$verde: #729e2e;
+$amarillo: #e2a30b;
+$blanco: #fff;
+
 
 // Colores Manifiesto
 $theme-colors: (
-	"ripley-red": $ripley-red,
-    "ripley-purple": $ripley-purple,
-    "ripley-yellow": $ripley-yellow,
-    "ripley-lila": $ripley-lila,
-    "ripley-coral": $ripley-coral,
-    "ripley-white": $ripley-white,
-    "ripley-grey": $ripley-grey,
-    "ripley-black": $ripley-black,
-    "danger": #d0112b
+    "cafe":$cafe,
+    "naranja":$naranja,
+    "negro":$negro,
+    "azul-obscuro":$azul-obscuro,
+    "celeste":$celeste,
+    "verde-obscuro":$verde-obscuro,
+    "verde":$verde,
+    "amarillo":$amarillo,
+    "blanco":$blanco,
 );
 
 //Inicializar componentes inactivos
